@@ -25,9 +25,9 @@ namespace Pixelator
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    var wb = (Workbook)Globals.ThisAddIn.Application.ActiveWorkbook;
+                    Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
 
-                    await Pixelate.PixelateFile(wb, openFile.FileName);
+                    await Pixelator.PixelateFile(wb, openFile.FileName);
                 }
             }
             catch (Exception exception)

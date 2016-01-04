@@ -196,7 +196,8 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Pixelate.cs" />
+    <Compile Include="ImageUtilities.cs" />
+    <Compile Include="Pixelator.cs" />
     <Compile Include="PixelatorRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
