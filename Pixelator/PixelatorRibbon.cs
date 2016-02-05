@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
-using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 
 namespace Pixelator
@@ -16,6 +16,7 @@ namespace Pixelator
 
         private async void btnPixelate_Click(object sender, RibbonControlEventArgs e)
         {
+            var screenUpdating = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
 
             try
@@ -25,18 +26,17 @@ namespace Pixelator
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+                    Excel.Application application = Globals.ThisAddIn.Application;
 
-                    await Pixelator.PixelateFile(wb, openFile.FileName);
+                    await Pixelator.PixelateFile(application, openFile.FileName).ConfigureAwait(false);
                 }
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-            
 
-            Globals.ThisAddIn.Application.ScreenUpdating = true;
+            Globals.ThisAddIn.Application.ScreenUpdating = screenUpdating;
         }
     }
 }

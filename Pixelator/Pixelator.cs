@@ -12,7 +12,7 @@ namespace Pixelator
 {
     public static class Pixelator
     {
-        public async static Task PixelateFile(Workbook Workbook, string FileName)
+        public async static Task PixelateFile(Application Application, string FileName)
         {
             var image = new Bitmap(FileName);
 
@@ -20,14 +20,16 @@ namespace Pixelator
             if (image.Width > ImageUtilities.LowResolutionSize.Width
                 || image.Height > ImageUtilities.LowResolutionSize.Height)
             {
-                var temp = await ImageUtilities.ScaleImage(image, ImageUtilities.LowResolutionSize);
+                var temp = await ImageUtilities.ScaleImage(image, ImageUtilities.LowResolutionSize).ConfigureAwait(false);                
+
                 // dispose the first handle since we won't be using it
                 image.Dispose();
 
                 image = temp;
             }
 
-            Worksheet ws = Workbook.Sheets.Add();
+            Workbook wb = Application.Workbooks.Add();
+            Worksheet ws = wb.Sheets.Add();
             
             Range usedRange = ws.Range[ws.Cells[1, 1], ws.Cells[image.Height, image.Width]];
             usedRange.ColumnWidth = 0.25;
