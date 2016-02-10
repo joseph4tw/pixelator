@@ -1,4 +1,5 @@
 # Pixelator
+
 A C# Excel Add-in to embed picture pixels into the worksheet cells
 
 ## How it works
@@ -16,3 +17,7 @@ When I first heard about the 73-year-old Japanese man using Excel to make art ([
 That's what this Add-in does.
 
 Later - when I actually read the article and looked at the images - I realized that the Japanese man was actually using a combination of things, but mostly Excel Shapes to get the art done. This is much different than I had originally thought. However, I still thought this little app was pretty cool, so I wrote it up for fun.
+
+## If you're going to fork / clone this
+
+Be sure to create a [signing key](https://msdn.microsoft.com/library/ms247123(v=vs.100).aspx) for the assembly before building / running locally.
