@@ -2,15 +2,13 @@
 
 A C# Excel Add-in to embed picture pixels into the worksheet cells
 
-## How it works
+![Pixelator](https://www.spreadsheetsmadeeasy.com/static/39c011ef0f9fe0e6d9a485c6eaf1e3cc/4fa42/pixelator_pic.png)
 
-In the Ribbon, under the "Add-Ins" tab, there is a new button that says "Pixelate".
+## See it in Action
 
-![alt text](http://www.spreadsheetsmadeeasy.com/wp-content/uploads/2016/02/pixelator_ribbon.png "Pixelator Add-In")
+![Pixelator in Action](https://www.spreadsheetsmadeeasy.com/ae551af4ef6d4baf960d8c13deb381d7/Pixelate-Image.gif)
 
-When you click it, you will be asked to provide an image file. When you provide the file, the program will go through the image pixel-by-pixel and place each pixel's color into each respective cell.
-
-![alt text](http://www.spreadsheetsmadeeasy.com/wp-content/uploads/2016/02/pixelator_pic.png "Example Pixelated Pixture")
+[Related Blog Post](https://www.spreadsheetsmadeeasy.com/pixelate-images-in-excel-cells/)
 
 ### Why do you resize the photo?
 
